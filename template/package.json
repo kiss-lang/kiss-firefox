@@ -4,7 +4,7 @@
   "description": "A Firefox extension made with Kisslang",
   "main": "index.js",
   "scripts": {
-    "postinstall": "dts2hx --all"
+    "postinstall": "dts2hx --all --noLibWrap"
   },
   "dependencies": {
     "@types/webextension-polyfill": "^0.10.0",
