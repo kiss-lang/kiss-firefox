@@ -1,0 +1,2 @@
+(function sendMessage [:String type :Array<Dynamic> data]
+    (API.browser.runtime.sendMessage (objectWith type data)))

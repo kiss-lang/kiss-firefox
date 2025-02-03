@@ -2,9 +2,6 @@
 (import kiss_firefox.Message)
 (import kiss_firefox.API)
 
-(function sendMessage [:String type :Array<Dynamic> data]
-    (API.browser.runtime.sendMessage (objectWith type data)))
-
 (collectBlocks onMessageCase)
 
 (defMacro onMessage [type dataList &body body]
