@@ -1,3 +1,4 @@
+(defMacroVar mainKissFile kissFile)
 (loadFrom "kiss-firefox" "src/kiss_firefox/Util.kiss")
 (loadFrom "kiss-firefox" "src/kiss_firefox/BackgroundUtil.kiss")
 

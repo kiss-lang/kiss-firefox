@@ -11,11 +11,13 @@
     `(onMessageCase (_ ,type [,@dataList] ,@body)))
 
 (defReaderMacro &eof "" [stream]
-    (let [onMessageCases (getCollectedExps "onMessageCase")]
-        `(API.browser.runtime.onMessage.addListener ->[:Message message sender :Function sendResponse]
-            (case message
-                ,@(for messageCase onMessageCases
-                    `((object type ,(first (Prelude.callArgs messageCase)) data ,(second (Prelude.callArgs messageCase)))
-                        ,@(.slice (Prelude.callArgs messageCase) 2)))
-                (otherwise
-                    (print "Message not handled: ${message}"))))))
+    (if (= kissFile mainKissFile)
+            (let [onMessageCases (getCollectedExps "onMessageCase")]
+                `(API.browser.runtime.onMessage.addListener ->[:Message message sender :Function sendResponse]
+                        (case message
+                            ,@(for messageCase onMessageCases
+                                `((object type ,(first (Prelude.callArgs messageCase)) data ,(second (Prelude.callArgs messageCase)))
+                                    ,@(.slice (Prelude.callArgs messageCase) 2)))
+                            (otherwise
+                                (print "Message not handled: ${message}")))))
+        `{}))
