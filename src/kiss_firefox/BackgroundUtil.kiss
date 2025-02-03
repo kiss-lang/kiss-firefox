@@ -2,6 +2,9 @@
 (function createTab [:String url]
     (API.browser.tabs.create (objectWith url)))
 
+(function sendMessage [:Int tabId :String type :Array<Dynamic> data]
+    (API.browser.tabs.sendMessage tabId (objectWith type data)))
+
 // Requires the activeTab permission in manifest.json
 (function runCode [tab :String jsCode]
     (API.browser.tabs.executeScript tab.id
