@@ -1,0 +1,3 @@
+(loadFrom "kiss-firefox" "src/kiss_firefox/Util.kiss")
+
+(onMessage "exampleMessage" [data1 data2] ~data1 ~data2)

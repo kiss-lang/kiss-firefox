@@ -1,2 +1,4 @@
-(import kiss_firefox.API)
+(loadFrom "kiss-firefox" "src/kiss_firefox/Util.kiss")
+
 (set js.Lib.global.document.body.style.border "5px solid red")
+(sendMessage "exampleMessage" [3 4])

@@ -15,5 +15,11 @@
       "matches": [],
       "js": ["bin/browser-polyfill.js", "bin/main.js"]
     }
-  ]
+  ],
+  "background": {
+		"scripts": [
+			"bin/browser-polyfill.js",
+			"bin/background.js"
+		]
+	}
 }
