@@ -1,0 +1,8 @@
+// Returns a promise of the tab object
+(function createTab [:String url]
+    (API.browser.tabs.create (objectWith url)))
+
+// Requires the activeTab permission in manifest.json
+(function runCode [tab :String jsCode]
+    (API.browser.tabs.executeScript tab.id
+        (object code jsCode)))

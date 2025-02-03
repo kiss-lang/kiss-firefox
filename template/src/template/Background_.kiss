@@ -1,4 +1,5 @@
 (loadFrom "kiss-firefox" "src/kiss_firefox/Util.kiss")
+(loadFrom "kiss-firefox" "src/kiss_firefox/BackgroundUtil.kiss")
 
 // REMEMBER THAT CONSOLE OUTPUT GOES TO A SEPARATE BACKGROUND CONSOLE.
 
