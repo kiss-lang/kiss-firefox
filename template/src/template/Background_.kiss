@@ -1,3 +1,5 @@
 (loadFrom "kiss-firefox" "src/kiss_firefox/Util.kiss")
 
+// REMEMBER THAT CONSOLE OUTPUT GOES TO A SEPARATE BACKGROUND CONSOLE.
+
 (onMessage "exampleMessage" [data1 data2] ~data1 ~data2)
